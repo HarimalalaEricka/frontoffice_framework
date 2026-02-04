@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS cicd_ticket;
+
+use cicd_ticket;
+
+
+CREATE TABLE User (
+    IdUser INT PRIMARY KEY,
+    UserName VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Mdp VARCHAR(255) NOT NULL
+);
