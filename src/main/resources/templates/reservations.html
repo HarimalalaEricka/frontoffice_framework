@@ -1,0 +1,30 @@
+<!-- filepath: frontoffice_framework/src/main/resources/templates/reservations.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Réservations</title>
+</head>
+<body>
+    <h1>Liste des Réservations</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Client ID</th>
+                <th>Date/Heure</th>
+                <th>Nombre de Personnes</th>
+                <th>Hôtel ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="res : ${reservations}">
+                <td th:text="${res.id}"></td>
+                <td th:text="${res.client_id}"></td>
+                <td th:text="${res.date_heure}"></td>
+                <td th:text="${res.nbr_pers}"></td>
+                <td th:text="${res.hotel_id}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
