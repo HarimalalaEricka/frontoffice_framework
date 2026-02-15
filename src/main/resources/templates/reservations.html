@@ -22,7 +22,7 @@
                 <th>Client ID</th>
                 <th>Date/Heure</th>
                 <th>Nombre de Personnes</th>
-                <th>Hôtel ID</th>
+                <th>Nom Hôtel</th>  <!-- Updated header -->
             </tr>
         </thead>
         <tbody>
@@ -31,7 +31,7 @@
                 <td th:text="${res.client_id}"></td>
                 <td th:text="${res.date_heure}"></td>
                 <td th:text="${res.nbr_pers}"></td>
-                <td th:text="${res.hotel_id}"></td>
+                <td th:text="${res.hotel_nom}"></td>  <!-- Display hotel name instead of ID -->
             </tr>
         </tbody>
     </table>
