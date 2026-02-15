@@ -1,4 +1,4 @@
-package com.back.models;
+package com.app.models;
 
 public class Hotel {
     private int idHotel;

@@ -1,0 +1,39 @@
+<!-- filepath: frontoffice_framework/src/main/resources/templates/reservations.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Réservations</title>
+</head>
+<body>
+    <h1>Liste des Réservations</h1>
+    
+    <!-- Formulaire de filtrage par date -->
+    <form th:action="@{/reservations}" method="get">
+        <label for="date">Filtrer par date (YYYY-MM-DD) :</label>
+        <input type="date" id="date" name="date" th:value="${selectedDate}" />
+        <button type="submit">Filtrer</button>
+        <a href="/reservations">Réinitialiser</a>
+    </form>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Client ID</th>
+                <th>Date/Heure</th>
+                <th>Nombre de Personnes</th>
+                <th>Nom Hôtel</th>  <!-- Updated header -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="res : ${reservations}">
+                <td th:text="${res.id}"></td>
+                <td th:text="${res.client_id}"></td>
+                <td th:text="${res.date_heure}"></td>
+                <td th:text="${res.nbr_pers}"></td>
+                <td th:text="${res.hotel_nom}"></td>  <!-- Display hotel name instead of ID -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
