@@ -6,6 +6,15 @@
 </head>
 <body>
     <h1>Liste des Réservations</h1>
+    
+    <!-- Formulaire de filtrage par date -->
+    <form th:action="@{/reservations}" method="get">
+        <label for="date">Filtrer par date (YYYY-MM-DD) :</label>
+        <input type="date" id="date" name="date" th:value="${selectedDate}" />
+        <button type="submit">Filtrer</button>
+        <a href="/reservations">Réinitialiser</a>
+    </form>
+    
     <table border="1">
         <thead>
             <tr>

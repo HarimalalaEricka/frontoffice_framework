@@ -10,7 +10,11 @@ public class ReservationService {
     private final RestTemplate restTemplate = new RestTemplate();
     private final String backofficeUrl = "http://localhost:8080/BackOffice/api/reservations";
 
-    public List<Map<String, Object>> getReservations() {
-        return restTemplate.getForObject(backofficeUrl, List.class);
+    public List<Map<String, Object>> getReservations(String date) {
+        String url = backofficeUrl;
+        if (date != null && !date.isEmpty()) {
+            url += "?date=" + date;
+        }
+        return restTemplate.getForObject(url, List.class);
     }
 }
